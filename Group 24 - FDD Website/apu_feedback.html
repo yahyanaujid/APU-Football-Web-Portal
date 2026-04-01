@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>APU Football Club (Feedback)</title>
+<link href="master.css" rel="stylesheet"/>
+
+<style>
+	.feedback-container {
+		max-width: 700px;
+		margin: 50px auto;
+		background-color: white;
+		padding: 30px;
+		border-radius: 10px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	}
+	label {
+		display: block;
+		margin-top: 20px;
+		font-weight: bold;
+		color: #00274D;
+	}
+	input[type=email], select, textarea {
+		width: 100%;
+		padding: 10px;
+		border-radius: 6px;
+		border: 1px solid #ccc;
+		margin-top: 8px;
+		font-size: 15px;
+	}
+	#stars {
+		margin-top: 8px;
+	}
+	#stars span {
+		font-size: 24px;
+		color: #ccc;
+		cursor: pointer;
+		transition: color 0.3s;
+	}
+	#stars span.selected {
+		color: yellow;
+	}
+	#charCount {
+		font-size: 14px;
+		margin-top: 5px;
+		color: #555;
+		text-align: right;
+	}
+	button[type=submit] {
+		margin-top: 25px;
+		background-color: #00274D;
+		color: white;
+		padding: 10px 18px;
+		border: none;
+		border-radius: 5px;
+		font-size: 16px;
+		cursor: pointer;
+	}
+	button[type=submit]:hover {
+		background-color: #004080;
+	}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<header>
+	<div class="navigation">
+		<a class="logo" href="default.html">
+		<img alt="APU FC Logo" class="logo-img" src="APUFC.png">
+		<span class="slogan">One Team, One Dream</span> </a>
+		<nav>
+			<ul>
+				<li><a href="default.html">Home</a>
+				<ul class="dropdown">
+					<li><a href="apu_about.html">About Us</a></li>
+					<li><a href="apu_contact.html">Contact</a></li>
+					<li><a href="apu_faq.html">FAQ</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Team</a>
+				<ul class="dropdown">
+					<li><a href="apu_committee.html">Committee</a></li>
+					<li><a href="apu_profiles.html">Team Profiles</a></li>
+					<li><a href="apu_poll.html">Player of the Season</a></li>
+					<li><a href="apu_spotlight.html">Player Spotlights</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Activities</a>
+				<ul class="dropdown">
+					<li><a href="apu_events.html">Events</a></li>
+					<li><a href="apu_schedule.html">Schedule</a></li>
+					<li><a href="apu_training.html">Training</a></li>
+					<li><a href="apu_news.html">News</a></li>
+					<li><a href="apu_highlights.html">Highlights</a></li>
+					<li><a href="apu_achievements.html">Achievements</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Media</a>
+				<ul class="dropdown">
+					<li><a href="apu_gallery.html">Gallery</a></li>
+					<li><a href="apu_feedback.html">Feedback</a></li>
+					<li><a href="apu_sponsor.html">Sponsorship</a></li>
+					<li><a href="apu_merch.html">Merchandise</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Rules</a>
+				<ul class="dropdown">
+					<li><a href="apu_rules.html">Rules &amp; Regulations</a></li>
+				</ul>
+				</li>
+				<li class="join-now"><a href="apu_join.html">JOIN US NOW!</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!-- Feedback Form Section -->
+<div class="feedback-container">
+	<h1>Give Us Your Feedback!</h1>
+	<form onsubmit="submitFeedback(event)">
+		<label for="email">*Your Email</label>
+		<input id="email" placeholder="example@domain.com" required="" type="email" />
+		<label for="category">*Category</label> 
+		<select id="category">
+			<option value="">-- Select a category --</option>
+			<option value="Website">Website</option>
+			<option value="Events">Events</option>
+			<option value="Team">Team</option>
+			<option value="Others">Others</option>
+		</select> 
+		<label for="stars">*Rate Us</label>
+		<div id="stars">
+			<span onclick="setRating(1)">★</span> <span onclick="setRating(2)">★</span>
+			<span onclick="setRating(3)">★</span> <span onclick="setRating(4)">★</span>
+			<span onclick="setRating(5)">★</span> </div>
+		<input id="rating" type="hidden" value="0" /><label for="feedback">*	Your 
+		Feedback</label>
+		<textarea id="feedback" maxlength="250" oninput="countCharacters()" placeholder="Type your thoughts here..." required="" rows="5"></textarea>
+		<div id="charCount">
+			0 / 250 characters</div>
+		<button type="submit">Submit</button>
+	</form>
+</div>
+
+<footer>
+&copy; 2025 APU Football Club. All rights reserved.
+</footer>
+
+<!-- JavaScript for Feedback Form -->
+<script>
+	<!-- JavaScript for Star rating feature -->
+	function setRating(value) {
+	document.getElementById('rating').value = value;
+	const stars = document.querySelectorAll('#stars span');
+	stars.forEach((star, index) => {
+	  star.classList.toggle('selected', index < value);
+	});
+	}
+	
+	/* Javascript for character count in "Your Feedback" text area*/
+	function countCharacters() {
+	const textarea = document.getElementById("feedback");
+	const counter = document.getElementById("charCount");
+	counter.textContent = `${textarea.value.length} / 250 characters`;
+	}
+	
+	/* Javascript for form validation and notification after submission.*/	
+	function submitFeedback(event) {
+	event.preventDefault();
+	const rating = document.getElementById("rating").value;
+	if (rating == 0) {
+	  	alert("Please select a star rating.");
+	return;
+	}
+	if (document.getElementById("category").value === "") {
+		alert("Please select a category.");
+		return;
+	}
+	alert("Thank you for your feedback!");
+		event.target.reset();
+		setRating(0);
+		countCharacters();
+	}
+	
+	window.onload = function () {
+	countCharacters();
+	};
+</script>
+
+</body>
+
+</html>

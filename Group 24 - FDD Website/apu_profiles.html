@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>APU Football Club (Team Profiles)</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="master.css" rel="stylesheet">
+<!-- Styles for Player list-->
+<style>
+	.player-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.players {
+		padding: 10px 15px;
+		margin-bottom: 10px;
+		background-color: white;
+		border-left: 4px solid transparent;
+		border-radius: 4px;
+		transition: background-color 0.3s, border-left-color 0.3s;
+	}
+	.players:hover {
+		background-color: #e0f7fa;
+		border-left-color: #007bff;
+	}
+	.players .description {
+		display: none;
+		font-size: 0.9em;
+		font-style: italic;
+		color: #555;
+		margin-top: 5px;
+	}
+	.players:hover .description {
+		display: block;
+	}
+	.position {
+		padding: 5px 8px;
+		font-size: 0.85em;
+		font-weight: 500;
+		color: white;
+		border-radius: 3px;
+		margin-left: 4px;
+	}
+	.goalkeeper {
+		background: #007bff;
+	}
+	.defender {
+		background: #28a745;
+	}
+	.midfielder {
+		background: #ffc107;
+	}
+	.striker {
+		background: #dc3545;
+	}
+	footer {
+		text-align: center;
+		padding: 20px;
+		background-color: #00274D;
+		color: white;
+		font-size: 14px;
+		margin-top: 40px;
+	}
+</style>
+</head>
+
+<body>
+<!-- Navigation bar-->
+<header>
+	<div class="navigation">
+		<a class="logo" href="default.html">
+		<img alt="APU FC Logo" class="logo-img" src="APUFC.png">
+		<span class="slogan">One Team, One Dream</span> </a>
+		<nav>
+			<ul>
+				<li><a href="default.html">Home</a></li>
+				<li><a href="#">Team</a>
+				<ul class="dropdown">
+					<li><a href="apu_committee.html">Committee</a></li>
+					<li><a href="apu_profiles.html">Team Profiles</a></li>
+					<li><a href="apu_poll.html">Player of the Season</a></li>
+					<li><a href="apu_spotlight.html">Player Spotlights</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Activities</a>
+				<ul class="dropdown">
+					<li><a href="apu_events.html">Events</a></li>
+					<li><a href="apu_schedule.html">Schedule</a></li>
+					<li><a href="apu_training.html">Training</a></li>
+					<li><a href="apu_news.html">News</a></li>
+					<li><a href="apu_highlights.html">Highlights</a></li>
+					<li><a href="apu_achievements.html">Achievements</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Media</a>
+				<ul class="dropdown">
+					<li><a href="apu_gallery.html">Gallery</a></li>
+					<li><a href="apu_feedback.html">Feedback</a></li>
+					<li><a href="apu_sponsor.html">Sponsorship</a></li>
+					<li><a href="apu_merch.html">Merchandise</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Rules</a>
+				<ul class="dropdown">
+					<li><a href="apu_rules.html">Rules &amp; Regulations</a></li>
+				</ul>
+				</li>
+				<li class="join-now"><a href="apu_join.html">JOIN US NOW!</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!-- Main content -Player List-->
+<div id="content-area">
+	<div class="container">
+		<div style="text-align: right; margin-bottom: 10px;">
+			<p style="font-style: italic;">*Hover over any player to see their description.</p>
+		</div>
+		<h1>Team Profiles</h1>
+		<p class="text-center">Meet our Starting XI and trusted substitutes representing 
+		APU on the field.</p>
+		<h2>Starting XI</h2>
+		<ul class="player-list">
+			<li class="players"><b>Mohammad Danish</b> –
+			<span class="position goalkeeper">Goalkeeper</span>
+			<div class="description">
+				Last line of defense and vocal team leader in goal.</div>
+			</li>
+			<li class="players"><b>Yuki Nakamura</b> –
+			<span class="position defender">Right Back</span>
+			<div class="description">
+				Quick overlapping runs and solid defense.</div>
+			</li>
+			<li class="players"><b>Ravi Chandran</b> –
+			<span class="position defender">Centre Back</span>
+			<div class="description">
+				Tackling powerhouse and aerial threat.</div>
+			</li>
+			<li class="players"><b>Lucas Pereira</b> –
+			<span class="position defender">Centre Back</span>
+			<div class="description">
+				Calm under pressure and ball distributor.</div>
+			</li>
+			<li class="players"><b>Adam Faizal</b> –
+			<span class="position defender">Left Back</span>
+			<div class="description">
+				Fast-paced counterattacks and defensive cover.</div>
+			</li>
+			<li class="players"><b>Benjamin Lau</b> –
+			<span class="position midfielder">Defensive Midfielder</span>
+			<div class="description">
+				Shields the backline and breaks up plays.</div>
+			</li>
+			<li class="players"><b>Muhammad Haris</b> –
+			<span class="position midfielder">Right Winger</span>
+			<div class="description">
+				Blazing pace and dangerous crosses.</div>
+			</li>
+			<li class="players"><b>Kartik Raj</b> –
+			<span class="position midfielder">Central Midfielder</span>
+			<div class="description">
+				Links defense and attack with vision.</div>
+			</li>
+			<li class="players"><b>Leonardo Costa</b> –
+			<span class="position midfielder">Attacking Midfielder</span>
+			<div class="description">
+				Playmaker with creativity and flair.</div>
+			</li>
+			<li class="players"><b>Daniel Chong</b> –
+			<span class="position midfielder">Left Winger</span>
+			<div class="description">
+				Cuts in from the wing with deadly precision.</div>
+			</li>
+			<li class="players"><b>Ahmed Suleiman</b> –
+			<span class="position striker">Striker</span>
+			<div class="description">
+				Clinical finisher and pressing forward.</div>
+			</li>
+		</ul>
+		
+		<h2>Substitutes</h2>
+		<ul class="player-list">
+			<li class="players"><b>Jayden Lee</b> –
+			<span class="position goalkeeper">Goalkeeper</span>
+			<div class="description">
+				Reliable backup and penalty saver.</div>
+			</li>
+			<li class="players"><b>Rizwan Malik</b> –
+			<span class="position defender">Full Back</span>
+			<div class="description">
+				Versatile wide defender.</div>
+			</li>
+			<li class="players"><b>Samuel Njoroge</b> –
+			<span class="position midfielder">Defensive Midfielder</span>
+			<div class="description">
+				Covers ground and breaks play.</div>
+			</li>
+			<li class="players"><b>Thongchai Sittichai</b> –
+			<span class="position midfielder">Winger</span>
+			<div class="description">
+				Speedy substitute with flair.</div>
+			</li>
+			<li class="players"><b>Kevin Yong</b> –
+			<span class="position striker">Striker</span>
+			<div class="description">
+				Impact player with clinical finishes.</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<footer>
+&copy; 2025 APU Football Club. All rights reserved.
+</footer>
+
+</body>
+
+</html>

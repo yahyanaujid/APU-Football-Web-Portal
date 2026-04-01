@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>APU Football Club(Poll)</title>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<link href="master.css" rel="stylesheet" />
+<style>
+	/* Style for Countdown Timer */
+	#countdown-timer {
+		text-align: center;
+		margin-top: 0px;
+		font-size: 20px;
+		color: #00274D;
+	}
+	#countdown-background {
+		font-size: 25px;
+		background-color: #00274D;
+		margin: 30px;
+		color: #FFFF00;
+	}
+	/* Style for Modal Box*/
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 10;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		background-color: rgba(0, 0, 0, 0.6);
+	}
+	.modal-content {
+		background-color: #fff;
+		margin: 10% auto;
+		padding: 20px;
+		width: 90%;
+		max-width: 400px;
+		text-align: center;
+	}
+	.close {
+		color: #aaa;
+		float: right;
+		font-size: 24px;
+		font-weight: bold;
+		cursor: pointer;
+	}
+</style>
+<script>
+	<!-- Javascript for preventing repetitive vote -->
+	let voted = false;
+	
+	function vote(playerName) {
+		if (voted) {
+	    	alert("You have already voted!");
+	    	return;
+		}
+	
+	 	const result = document.getElementById("result-" + playerName);
+	  	result.innerText = parseInt(result.innerText) + 1;
+	  	voted = true;
+	
+	  	document.getElementById("voteMessage").innerText = "Thank you for voting for " + playerName + "!";
+	  	document.getElementById("voteModal").style.display = "block";
+	}
+	
+	window.onload = function () {
+	  	const modal = document.getElementById("voteModal");
+	  	const span = document.querySelector("#voteModal .close");
+	
+	  	span.onclick = function () {
+	    modal.style.display = "none";
+	  	}
+	
+	  	window.onclick = function (event) {
+	    	if (event.target == modal) {
+	      	modal.style.display = "none";
+	    }
+	  }
+	
+		/* Coutndown timer JavaScript*/
+	  	const countDownDate = new Date("Aug 16, 2025 23:59:59").getTime();
+	
+	  	const timer = setInterval(function () {
+	    const now = new Date().getTime();
+	    const distance = countDownDate - now;
+	
+	    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	
+	    document.getElementById("countdown-background").innerHTML = days + "d " + hours + "h "
+	      + minutes + "m " + seconds + "s ";
+	
+	    if (distance < 0) {
+	      clearInterval(timer);
+	      document.getElementById("countdown-background").innerHTML = "EXPIRED";
+	    }
+	  }, 1000);
+	};
+</script>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<header>
+	<div class="navigation">
+		<a class="logo" href="default.html">
+		<img alt="APU FC Logo" class="logo-img" src="APUFC.png">
+		<span class="slogan">One Team, One Dream</span> </a>
+		<nav>
+			<ul>
+				<li><a href="default.html">Home</a>
+				<ul class="dropdown">
+					<li><a href="apu_about.html">About Us</a></li>
+					<li><a href="apu_contact.html">Contact</a></li>
+					<li><a href="apu_faq.html">FAQ</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Team</a>
+				<ul class="dropdown">
+					<li><a href="apu_committee.html">Committee</a></li>
+					<li><a href="apu_profiles.html">Team Profiles</a></li>
+					<li><a href="apu_poll.html">Player of the Season</a></li>
+					<li><a href="apu_spotlight.html">Player Spotlights</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Activities</a>
+				<ul class="dropdown">
+					<li><a href="apu_events.html">Events</a></li>
+					<li><a href="apu_schedule.html">Schedule</a></li>
+					<li><a href="apu_training.html">Training</a></li>
+					<li><a href="apu_news.html">News</a></li>
+					<li><a href="apu_highlights.html">Highlights</a></li>
+					<li><a href="apu_achievements.html">Achievements</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Media</a>
+				<ul class="dropdown">
+					<li><a href="apu_gallery.html">Gallery</a></li>
+					<li><a href="apu_feedback.html">Feedback</a></li>
+					<li><a href="apu_sponsor.html">Sponsorship</a></li>
+					<li><a href="apu_merch.html">Merchandise</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Rules</a>
+				<ul class="dropdown">
+					<li><a href="apu_rules.html">Rules &amp; Regulations</a></li>
+				</ul>
+				</li>
+				<li class="join-now"><a href="apu_join.html">JOIN US NOW!</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!-- main Content - Poll -->
+<div id="content-area">
+	<div class="container">
+		<h1>Player of the Season &#128081; – Vote Now &#10071;&#10071;&#10071;</h1>
+		<!-- Countdown timer -->
+		<div id="countdown-timer">
+			<p>Cast your vote before the season ends! You can only vote once per 
+			session.</p>
+			<p id="countdown-background"></p>
+		</div>
+		<!-- Poll-->
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('MohammadDanish')">Vote Mohammad 
+			Danish</button>&nbsp;&nbsp;<span>Votes: <span id="result-MohammadDanish">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('YukiNakamura')">Vote Yuki 
+			Nakamura</button>&nbsp;&nbsp;<span>Votes: <span id="result-YukiNakamura">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('RaviChandran')">Vote Ravi 
+			Chandran</button>&nbsp;&nbsp;<span>Votes: <span id="result-RaviChandran">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('LucasPereira')">Vote Lucas 
+			Pereira</button>&nbsp;&nbsp;<span>Votes: <span id="result-LucasPereira">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('AdamFaizal')">Vote Adam Faizal
+			</button>&nbsp;&nbsp;<span>Votes: <span id="result-AdamFaizal">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('BenjaminLau')">Vote Benjamin 
+			Lau</button>&nbsp;&nbsp;<span>Votes: <span id="result-BenjaminLau">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('MuhammadHaris')">Vote Muhammad 
+			Haris</button>&nbsp;&nbsp;<span>Votes: <span id="result-MuhammadHaris">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('KartikRaj')">Vote Kartik 
+			Raj</button>&nbsp;&nbsp;<span>Votes: <span id="result-KartikRaj">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('LeonardoCosta')">Vote Leonardo 
+			Costa</button>&nbsp;&nbsp;<span>Votes: <span id="result-LeonardoCosta">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('DanielChong')">Vote Daniel 
+			Chong</button>&nbsp;&nbsp;<span>Votes: <span id="result-DanielChong">0</span></span></div>
+		<div class="vote-row">
+			<button class="vote-button" onclick="vote('AhmedSuleiman')">Vote Ahmed 
+			Suleiman</button>&nbsp;&nbsp;<span>Votes: <span id="result-AhmedSuleiman">0</span></span></div>
+	</div>
+</div>
+
+<!-- Modal Box -->
+<div id="voteModal" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<h2 id="voteMessage">Thanks for voting!</h2>
+		<img alt="Thank You GIF" src="claphand.gif" style="width: 100%; max-width: 300px; display: block; margin: auto;">
+	</div>
+</div>
+
+<footer>
+&copy; 2025 APU Football Club. All rights reserved.
+</footer>
+
+</body>
+
+</html>

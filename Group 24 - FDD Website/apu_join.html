@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>APU Football Club(Join Us)</title>
+<link href="master.css" rel="stylesheet" />
+<!-- Javascript for form validation -->
+<script>
+	function validateForm() {
+	  var name = document.forms["joinForm"]["name"].value;
+	  var email = document.forms["joinForm"]["email"].value;
+	  var sid = document.forms["joinForm"]["student_id"].value;
+	  if (name === "" || email === "" || sid === "") {
+	    alert("All fields marked with * must be filled out.");
+	    return false;
+	  }
+	  alert("Your registration has been submitted!");
+	  return true;
+	}
+</script>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<header>
+	<div class="navigation">
+		<a class="logo" href="default.html">
+		<img alt="APU FC Logo" class="logo-img" src="APUFC.png">
+		<span class="slogan">One Team, One Dream</span> </a>
+		<nav>
+			<ul>
+				<li><a href="default.html">Home</a>
+				<ul class="dropdown">
+					<li><a href="apu_about.html">About Us</a></li>
+					<li><a href="apu_contact.html">Contact</a></li>
+					<li><a href="apu_faq.html">FAQ</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Team</a>
+				<ul class="dropdown">
+					<li><a href="apu_committee.html">Committee</a></li>
+					<li><a href="apu_profiles.html">Team Profiles</a></li>
+					<li><a href="apu_poll.html">Player of the Season</a></li>
+					<li><a href="apu_spotlight.html">Player Spotlights</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Activities</a>
+				<ul class="dropdown">
+					<li><a href="apu_events.html">Events</a></li>
+					<li><a href="apu_schedule.html">Schedule</a></li>
+					<li><a href="apu_training.html">Training</a></li>
+					<li><a href="apu_news.html">News</a></li>
+					<li><a href="apu_highlights.html">Highlights</a></li>
+					<li><a href="apu_achievements.html">Achievements</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Media</a>
+				<ul class="dropdown">
+					<li><a href="apu_gallery.html">Gallery</a></li>
+					<li><a href="apu_feedback.html">Feedback</a></li>
+					<li><a href="apu_sponsor.html">Sponsorship</a></li>
+					<li><a href="apu_merch.html">Merchandise</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Rules</a>
+				<ul class="dropdown">
+					<li><a href="apu_rules.html">Rules &amp; Regulations</a></li>
+				</ul>
+				</li>
+				<li class="join-now"><a href="apu_join.html">JOIN US NOW!</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!-- Main content- Join Us Form -->
+<div id="content-area">
+	<div class="container">
+		<h1>Join Us</h1>
+		<p>Are you ready to be a part of something bigger? APU Football Club is 
+		always looking for enthusiastic individuals to join our ever-growing family.
+		</p>
+		<p>Whether you play professionally, casually, or want to support the team 
+		as a volunteer — you're welcome here. Members enjoy weekly training, club 
+		tournaments, leadership opportunities, and more. </p>
+		
+		<form name="joinForm" onsubmit="return validateForm()" style="margin-top: 30px;">
+			<label for="name">* Name:</label><br />
+			<input id="name" name="name" style="width: 100%; padding: 8px;" type="text"><br>
+			<br><label for="student_id">* Student ID:</label><br />
+			<input id="student_id" name="student_id" style="width: 100%; padding: 8px;" type="text"><br>
+			<br><label for="email">* Email:</label><br />
+			<input id="email" name="email" style="width: 100%; padding: 8px;" type="email"><br>
+			<br><label for="position">Preferred Position:</label><br />
+			<input id="position" name="position" placeholder="e.g., Midfielder, Goalkeeper" style="width: 100%; padding: 8px;" type="text"><br>
+			<br><label for="reason">Reason for Joining:</label><br />
+			<textarea id="reason" name="reason" rows="5" style="width: 100%; padding: 8px;"></textarea><br>
+			<br>
+			<input style="padding: 10px 20px; background-color: #00274D; color: white; border: none; cursor: pointer;" type="submit" value="Submit Application">
+		</form>
+	</div>
+</div>
+
+<footer>
+&copy; 2025 APU Football Club. All rights reserved.
+</footer>
+
+</body>
+
+</html>

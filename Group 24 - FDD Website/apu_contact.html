@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>APU Football Club - Contact Us</title>
+<link href="master.css" rel="stylesheet">
+<!-- Styles for text area in form and iframe for embedded map -->
+<style>
+	input, textarea {
+		border: 1px solid #ccc;
+	}
+	input:focus, textarea:focus {
+		border-color: #00274D;
+		outline: none;
+	}
+	form {
+		background: #f9f9f9;
+		padding: 20px;
+		margin-bottom: 30px;
+	}
+	iframe {
+		width: 100%;
+		border: none;
+	}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<header>
+	<div class="navigation">
+		<a class="logo" href="default.html">
+		<img alt="APU FC Logo" class="logo-img" src="APUFC.png">
+		<span class="slogan">One Team, One Dream</span> </a>
+		<nav>
+			<ul>
+				<li><a href="default.html">Home</a>
+				<ul class="dropdown">
+					<li><a href="apu_about.html">About Us</a></li>
+					<li><a href="apu_contact.html">Contact</a></li>
+					<li><a href="apu_faq.html">FAQ</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Team</a>
+				<ul class="dropdown">
+					<li><a href="apu_committee.html">Committee</a></li>
+					<li><a href="apu_profiles.html">Team Profiles</a></li>
+					<li><a href="apu_poll.html">Player of the Season</a></li>
+					<li><a href="apu_spotlight.html">Player Spotlights</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Activities</a>
+				<ul class="dropdown">
+					<li><a href="apu_events.html">Events</a></li>
+					<li><a href="apu_schedule.html">Schedule</a></li>
+					<li><a href="apu_training.html">Training</a></li>
+					<li><a href="apu_news.html">News</a></li>
+					<li><a href="apu_highlights.html">Highlights</a></li>
+					<li><a href="apu_achievements.html">Achievements</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Media</a>
+				<ul class="dropdown">
+					<li><a href="apu_gallery.html">Gallery</a></li>
+					<li><a href="apu_feedback.html">Feedback</a></li>
+					<li><a href="apu_sponsor.html">Sponsorship</a></li>
+					<li><a href="apu_merch.html">Merchandise</a></li>
+				</ul>
+				</li>
+				<li><a href="#">Rules</a>
+				<ul class="dropdown">
+					<li><a href="apu_rules.html">Rules &amp; Regulations</a></li>
+				</ul>
+				</li>
+				<li class="join-now"><a href="apu_join.html">JOIN US NOW!</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<!-- Main content -->
+<div id="content-area">
+	<div class="container">
+		<h1>Contact Us</h1>
+		<p>Got a question or want to reach out to us directly? The APU Football 
+		Club committee is here to assist with any inquiries regarding membership, 
+		training schedules, tournaments, or collaboration opportunities.</p>
+		
+		<p>Drop us an email at <b>apufc@apu.edu.my</b>, call us at <b>+60 12-345 
+		6789</b>, or visit us during our training sessions at the APU Football Field.</p>
+		
+		<div class="contact-info">
+			<p><b>&#128231; Email:</b> apufc@apu.edu.my</p>
+			<p><b>&#128222; Phone:</b> +60 12-345 6789</p>
+			<p><b>&#128204; Location:</b> APU Football Field, MRANTI Park, 57000 Kuala Lumpur, Federal Territory of Kuala Lumpur</p>
+			<!-- Embedded google map for football field location -->
+			<iframe height="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4725.974789329825!2d101.7016676!3d3.0580483000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4b001ef89ebb%3A0xb9603cb438a4248f!2sAPU%20Football%20Field!5e1!3m2!1sen!2smy!4v1750273922326!5m2!1sen!2smy"></iframe>
+		</div>
+			
+		<form action="default.html" method="post" name="Contact-Form" onsubmit="return validateForm(event)">
+			*Name:<br>
+			<input type="text" id="name" maxlength="60" name="name" style="width: 100%; padding: 5px;" ><br>
+			<br>*Email:<br>
+			<input type="email" id="email" maxlength="60" name="email" style="width: 100%; padding: 5px;" ><br>
+			<br>*Comments:<br>
+			<textarea id="message" maxlength="1000" name="message" rows="6" style="width: 100%; padding: 5px;"></textarea><br>
+			<br>Attachment (optional):<br><input type="file" name="attachment"><br>
+			<br>
+			<input style="padding: 10px 20px; background-color: #00274D; color: white; border: none; cursor: pointer;" type="submit" value="Send">
+			<input style="padding: 10px 20px; margin-left: 10px; background-color: #ccc; border: none; cursor: pointer;" type="reset" value="Clear">
+		</form>
+	</div>
+
+<!-- JavaScript for form validation -->
+<script>
+  	function validateForm(event) {
+    	const name = document.getElementById("name").value.trim();
+    	const email = document.getElementById("email").value.trim();
+    	const message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+      	alert("Please fill in all fields.");
+      	event.preventDefault();
+      	return false;
+    }
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+      	alert("Please enter a valid email address.");
+      	event.preventDefault();
+      	return false;
+    }
+
+    alert("Submission completed!");
+    	return true;
+  	}
+</script>
+
+<footer>
+&copy; 2025 APU Football Club. All rights reserved.
+</footer>
+
+</div>
+</body>
+</html>
